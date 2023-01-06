@@ -21,28 +21,40 @@ export default {
     toggler() {
       console.log('click');
 
-      this.isActive = !this.active;
-
       const root = document.getElementById('root');
+      console.log(root.classList);
 
       if (!this.active) {
 
+        this.isActive = !this.active;
+
         console.log(root.classList);
-        root.classList.remove('activeClass');
-        
+        // root.classList.remove('activeClass');
+
+        this.reload();
+
       }
       
       if (this.active) {
+        this.isActive = !this.active;
         console.log(root.classList);
-       root.classList.add('activeClass');
+      //  root.classList.add('activeClass');
+       this.reload();
       }
-    }
+    },
+    reload() {
+            this.$forceUpdate();
+    },
   }
 }
 </script>
 
+<!-- class="activeClass" -->
+
 <template>
-  <div id="root" class="activeClass">
+  <div id="root"
+  :class="{ activeClass: isActive }"
+  >
     <header>
     <img src="./assets/logo428x428.png" alt="logo" id="logo">
     <img 
@@ -50,7 +62,7 @@ export default {
     src="./assets/logo256x256.png" alt="logo256" id="logo256">
     <img src="./assets/logo0142857.png" alt="logo4" id="logo4">
     <h1
-    @click="toggler"
+    @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
     ><sup>
       <sup>
       <sup>
