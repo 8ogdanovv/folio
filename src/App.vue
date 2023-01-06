@@ -3,22 +3,55 @@ export default {
   name: 'App',
   data() {
     return {
-
+      funcMenuOnOff: false,
+      isActive: true
     }
   },
-  mounted() {
+  methods: {
+    funcMenuToggle() {
+      this.funcMenuOnOff = !this.funcMenuOnOff;
+    },
+    localSessionBG() {
+      if (document.body.style.backgroundImage === `url('./assets/320_640x21498.png')`) {
+        document.body.style.setProperty('backgroundImage', 'none')
+      } else {
+        document.body.style.setProperty( 'backgroundImage' , `url('./assets/320_640x21498.png')`);
+      }
+    },
+    toggler() {
+      console.log('click');
 
+      this.isActive = !this.active;
+
+      const root = document.getElementById('root');
+
+      if (!this.active) {
+
+        console.log(root.classList);
+        root.classList.remove('activeClass');
+        
+      }
+      
+      if (this.active) {
+        console.log(root.classList);
+       root.classList.add('activeClass');
+      }
+    }
   }
 }
 </script>
 
 <template>
-  <div>
+  <div id="root" class="activeClass">
     <header>
     <img src="./assets/logo428x428.png" alt="logo" id="logo">
-    <img src="./assets/logo256x256.png" alt="logo256" id="logo256">
+    <img 
+    @click="funcMenuToggle"
+    src="./assets/logo256x256.png" alt="logo256" id="logo256">
     <img src="./assets/logo0142857.png" alt="logo4" id="logo4">
-    <h1><sup>
+    <h1
+    @click="toggler"
+    ><sup>
       <sup>
       <sup>
        <sub><sub id="V">V</sub></sub>
@@ -38,25 +71,24 @@ export default {
     </label>
     <!-- <button style="padding: 0; margin: 0;"> -->
 
-    <svg style="margin-left: 0.5vw;" width="50" viewBox="0 2 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id="funcMenuToggler"
+    @click="funcMenuToggle"
+    style="margin-left: 0.5vw;" width="50" viewBox="0 2 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.5 5.28418C1.5 5.48309 1.57902 5.67386 1.71967 5.81451C1.86032 5.95516 2.05109 6.03418 2.25 6.03418H21.75C21.9489 6.03418 22.1397 5.95516 22.2803 5.81451C22.421 5.67386 22.5 5.48309 22.5 5.28418C22.5 5.08527 22.421 4.8945 22.2803 4.75385C22.1397 4.6132 21.9489 4.53418 21.75 4.53418H2.25C2.05109 4.53418 1.86032 4.6132 1.71967 4.75385C1.57902 4.8945 1.5 5.08527 1.5 5.28418ZM5.25 11.2842H21.75C21.9489 11.2842 22.1397 11.3632 22.2803 11.5038C22.421 11.6445 22.5 11.8353 22.5 12.0342C22.5 12.2331 22.421 12.4239 22.2803 12.5645C22.1397 12.7052 21.9489 12.7842 21.75 12.7842H5.25C5.05109 12.7842 4.86032 12.7052 4.71967 12.5645C4.57902 12.4239 4.5 12.2331 4.5 12.0342C4.5 11.8353 4.57902 11.6445 4.71967 11.5038C4.86032 11.3632 5.05109 11.2842 5.25 11.2842ZM12 18.0342H21.75C21.9489 18.0342 22.1397 18.1132 22.2803 18.2538C22.421 18.3945 22.5 18.5853 22.5 18.7842C22.5 18.9831 22.421 19.1739 22.2803 19.3145C22.1397 19.4552 21.9489 19.5342 21.75 19.5342H12C11.8011 19.5342 11.6103 19.4552 11.4697 19.3145C11.329 19.1739 11.25 18.9831 11.25 18.7842C11.25 18.5853 11.329 18.3945 11.4697 18.2538C11.6103 18.1132 11.8011 18.0342 12 18.0342Z" fill="#fff"/>
 </svg>
 <!-- </button> -->
+
+<nav v-show="funcMenuOnOff" id="functional">
+<ol>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ol>
+</nav>
+
     </header>
-
-    <nav style="
-    display: none;
-    text-align: right;
-    ">
-    <ol>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ol>
-    </nav>
-
 
     <div class="hero">
 
@@ -339,6 +371,18 @@ export default {
 </template>
 
 <style>
+
+.activeClass {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 21498px;
+  background: #fff;
+  background-image: url('./assets/320_640x21498.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 
 
@@ -811,7 +855,7 @@ header h1 {
 
 #app {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .logo {
   height: 6em;
