@@ -55,27 +55,43 @@ export default {
   <div id="root"
   :class="{ activeClass: isActive }"
   >
-    <header>
-    <img src="./assets/logo428x428.png" alt="logo" id="logo">
+    <header class="header" id="header">
+    <!-- <img 
+    class="underhead"
+    src="./assets/logo428x428.png" alt="logo" id="logo"> -->
     <img 
+    class="underhead"
     @click="funcMenuToggle"
     src="./assets/logo256x256.png"
     alt="logo256" id="logo256">
     <img 
-    style="z-index: -5 !important;"
+    class="underhead"
     src="./assets/logo0142857.png" alt="logo4" id="logo4">
     <h1
-    @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
     ><sup>
       <sup>
       <sup>
-       <sub><sub id="V">V</sub></sub>
-        <sub id="adym">a<del>dym</del>
+       <sub><sub id="V"
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >V</sub></sub>
+        <sub id="adym"
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >a<del
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >dym</del>
         </sub>
-        <span id="for">4</span>
-        <sub><b id="C" style="text-transform: lowercase;">Č</b></sub>
-        <span id="h">h</span>
-        <sup id="e">e</sup>
+        <span id="for"
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >4</span>
+        <sub><b
+          @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+          id="C" style="text-transform: lowercase;">Č</b></sub>
+        <span id="h"
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >h</span>
+        <sup id="e"
+        @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
+        >e</sup>
       </sup>
     </sup>
   </sup>
@@ -95,11 +111,11 @@ export default {
 
 <nav v-show="funcMenuOnOff" id="functional">
 <ol>
-  <li>1</li>
+  <li>[^] go to top</li>
   <li>2</li>
   <li>3</li>
   <li>4</li>
-  <li>5</li>
+  <li>[x] close</li>
 </ol>
 </nav>
 
@@ -382,33 +398,332 @@ export default {
 </div>
 
 
+<div class="blog">
+  <h2>My Blog</h2>
+
+  <div class="cards">
+    <div class="card">
+  <img src="./assets/blog1.png" alt="blog1">
+</div>
+<div class="card">
+  <img src="./assets/blog2.png" alt="blog2">
+</div>
+<div class="card">
+  <img src="./assets/blog3.png" alt="blog3">
+</div>
+</div>
+
+<div class="caro">
+
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="10" cy="10" r="6.5" stroke="#333333" stroke-width="7"/>
+  </svg>
+  
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="6" cy="6" r="6" fill="#333333"/>
+  </svg>
+  
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="6" cy="6" r="6" fill="#333333"/>
+  </svg>
+
+  </div>
+
+</div>
+
+<div class="hireMe">
+
+  <h2>Hire Me For Your Next Amazing Project</h2>
+
+  <p>
+    Let's make something new different and more meaningful or make things more visual or conceptual?
+    <br>
+    Just say hello!
+
+  </p>
+
+  <address>
+<section>
+  <svg width="22" height="2" viewBox="0 0 22 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1" x2="22" y2="1" stroke="#333333"/>
+    </svg>
+    
+<div>
++380505444199</div>
+</section>
+<section>
+
+  <svg width="22" height="2" viewBox="0 0 22 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1" x2="22" y2="1" stroke="#333333"/>
+    </svg>
+    
+<div>
+  vadym4che@gmail.com
+</div>
+</section>
+<section>
+  <svg width="22" height="2" viewBox="0 0 22 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line y1="1" x2="22" y2="1" stroke="#333333"/>
+    </svg>
+    
+<div>
+19/5 Green street,
+<br>
+Boyarka, Ukraine</div>
+</section> 
+</address>
+</div>
+
+<div class="form">
+  <br>
+  <input type="text" placeholder="Your name">
+  <br>
+  <input type="text" placeholder="Your email Address">
+  <br>
+  <input type="text" placeholder="Your budget (Optional)"><input placeholder="Your project description">
+  <br>
+  <button class="send">SEND</button>
+</div>
+
+<footer class="footer">
+
+  
+  <div class="media">
+    <img src="./assets/fb.png" alt="fb">
+    <img src="./assets/in.png" alt="in">
+    <!-- <img src="./assets/cw.png" alt="cw"> -->
+<span class="ch"><b>
+Č</b></span>
+    
+    <img src="./assets/gh.png" alt="gh">
+    <img src="./assets/tg.png" alt="tg">
+  </div>
+
+
+
+  <p>
+  &copy; 2023 V4Č#e Portfolio Template
+</p>
+</footer>
+
   </div>
 </template>
 
 <style>
-span, h4, div, ol{
-  z-index: 3 !important;
+
+.footer .media img {
+  margin: 0;
+}
+.footer .media:not(:last-child, :first-child),
+.footer .media:not(:first-child),
+.footer .media img{
+
+}
+.footer .media span{
+  margin-left: 5vw;
+  margin-right: 5vw;  
+}
+
+.footer .media {
+  margin-left: 5vw;
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.footer p {
+  margin-top: -10vw;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer .media {
+  margin-top: -17.8vw;
+}
+
+button.send {
+  align-self: flex-end;
+  margin-right: 6.3vw;
+  width: 36.3vw;
+  height: 15.5vw;
+  margin-bottom: 25vw;
+  font-size: 0.9rem;
+}
+
+.form input {
+  display: block;
+  height: 3rem;
+  margin-top: 8vw;
+  width: 80vw;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.form input::after {
+  content: '';
+  position: absolute;
+  width: 75vw;
+  height: 0.1vw;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+.form input:last-of-type {
+  height: 5.7rem;
+}
+
+.form {
+  padding-top: 1.7rem;
+  margin: 18vw auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #333333;
+}
+
+address section svg {
+  display: block;
+  transform: scale(2);
+}
+
+address > section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+address {
+  display: block;
+  margin-top: 14.5vw;
+  margin-left: 1vw;
+}
+
+address > section > div {
+
+  margin-left: 8.1vw;
+  line-height: 2.5rem;
+}
+
+address > section:last-of-type > div {
+  line-height: 1.5rem;
 }
 
 
+.hireMe > p {
+  width: 94%;
+  font-size: 1.11rem;
+  line-height: 1.54rem;
+  letter-spacing: 0.03vw;
+}
 
+.hireMe h2 {
+  margin-top: 8.6vw;
+  font-size: 2.5rem;
+}
 
-h1 {
-  position: absolute;
+.hireMe {
+  margin-left: 5vw;
+  padding-top: 38.5vw;
+  font-size: 1.25rem;
+  line-height: 3rem;
+}
+
+.blog .cards .card {
+  width: 88vw;
+  height: 182.2vw;
+}
+
+.blog .cards .card img {
+  width: 88vw;
+  height: 182.2vw;
+}
+
+.blog .cards {
+  margin-left: 5vw;
+  opacity: 0.999999;
+}
+
+.blog {
+  padding-top: 9vw;
+  margin-top: 30vw;
+}
+
+.blog h2 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+#header {
   z-index: 10 !important;
 }
 
-
-#root > div:not(header) {
-  z-index: 3;
+#header:hover {
+  cursor: pointer;
 }
+
+img:not(img.underhead) {
+  z-index: 10 !important;
+}
+
+#V,
+#adym,
+#for,
+#C,
+#h
+#E,
+{
+  display: inline-block;
+  position: relative;
+  z-index: 10 !important;
+  margin: 0;
+}
+
+#for::after
+{
+  content: '';
+  z-index: -2;
+  position: absolute;
+  background-color: #44c444;
+  width: 2.7vw;
+  top: 0;
+  left: 0;
+  border: inset;
+  border: none;
+  box-shadow: 0 0 1.42857rem 0.142857rem rgba(68, 196, 68, 1);
+  height: 100%;
+}
+
+#root::after
+{
+  content: '';
+  z-index: -2;
+  position: absolute;
+  background-color: #44c444;
+  width: 2.7vw;
+  top: 0;
+  left: 10vw;
+  border: inset;
+  border: none;
+  box-shadow: 0 0 1.42857rem 0.142857rem rgba(68, 196, 68, 1);
+  height: var(--mobile-height);
+}
+
+
+
+#root h1 {
+  position: absolute;
+  z-index: 50 !important;
+}
+
 
 .activeClass {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 21498px;
-  background: #fff;
   background-image: url('./assets/320_640x21498.png');
   background-position: center;
   background-size: contain;
@@ -638,7 +953,6 @@ letter-spacing: -0.3vw;
 .read svg {
   transform: scale(2);
   margin-left: 9.6vw;
-  
 }
 
 .card p {
@@ -674,7 +988,6 @@ letter-spacing: -0.3vw;
   color: white;
   display: flex;
   flex-direction: column;
- 
 }
 
 .wid h2 {
@@ -701,8 +1014,6 @@ letter-spacing: -0.3vw;
   margin-top: 0.2rem;
   font-size: 1.3rem;
   line-height: 1.3rem;
-  /* border: 1px solid black;
-  border-radius: 1vw; */
 }
 
 .media {
@@ -742,17 +1053,34 @@ img.photo {
   margin-left: 5vw;
   margin-top: 3vw;
   box-shadow: 0 0 0.5rem 0.25rem #44c444;
+  z-index: 20 !important;
 }
 
-#V,
-#adym,
-#C,
-#E,
-#for,
-#h
-{
-  display: inline-block;
-  margin: 0;
+nav {
+  width: 33vw;
+  position: absolute;
+  top: 28vw;
+  right: 0;
+}
+
+nav ol {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style: none;
+}
+
+nav ol li {
+  margin-top: 2vw;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+nav ol li:hover {
+  box-shadow: 0 0 1rem 0.5rem #44c444;
 }
 
 #V
@@ -768,42 +1096,41 @@ img.photo {
   text-transform: capitalize;
 }
 
-#for 
+#for
 {
   background-color: #44c444;
-  position: relative;
-  z-index: -1;
 }
 
-#root > div:not(div.fewWords) {
-  z-index: 10 !important;
-}
-
-#root div.fewWords {
-  z-index: -5 !important;
+#root > *:not(#header, #for::after) {
+  z-index: 0;
 }
 
 #C {
   position: relative;
-  z-index: 1;
   margin: 0;
   margin-left: -1.7vw;
   font-size: 2.5rem;
 }
 
 #h {
+  display: inline-flex;
   position: relative;
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 
-#h::after {
+#h::before {
   content: '#';
-  left: 0.4vw;
   position: absolute;
+  top:0;
+  left: 0;
 }
 
 #e {
   margin-left: 0.142857vw;
+}
+
+h1 {
+  text-shadow: 0 0 0.5rem #44c444;
 }
 
 #logo4
@@ -816,21 +1143,6 @@ img.photo {
 }
 
 
-#for::after
-{
-  content: '';
-  position: absolute;
-  background-color: #44c444;
-  height: 1000px;
-  z-index: -7;
-  width: 2.7vw;
-  top: 0;
-  left: 0;
-  border: inset;
-  border: none;
-  box-shadow: 0 0 1.42857rem 0.142857rem rgba(68, 196, 68, 1);
-}
-
 header {
   display: flex;
   position: sticky;
@@ -838,18 +1150,12 @@ header {
   top:0;
   left: 0;
   right: 0;
-  z-index: 10 !important;
+  z-index: 25 !important;
 }
 
-header #logo {
-  visibility: hidden;
-  position: absolute;
-  z-index: -2;
-  max-height: 100%;
-}
+
 header #logo256 {
   position: absolute;
-  z-index: -2;
   max-height: 100%;
   right: 0;
   opacity: 0.57;
@@ -865,7 +1171,6 @@ header svg {
 }
 
 header h1 {
-  background: #fff;
   padding-left: 5vw;
   line-height: 33.3vw;
   margin: 0;
@@ -882,12 +1187,6 @@ header h1 {
   header {
     width: 100%;
     height: 33.3vw;
-    border: 1px solid #44c444;
-
-}
-
-#for::after {
-  height: var(--mobile-height);
 }
 
 #search {
@@ -901,17 +1200,6 @@ header h1 {
   width: 100%;
   height: auto;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 
 #I
 {
@@ -920,7 +1208,5 @@ header h1 {
   height: 100%;
 }
 
-img * :not(header img) {
-  z-index: 9 !important;
-}
+
 </style>
