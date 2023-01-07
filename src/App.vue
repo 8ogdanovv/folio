@@ -59,8 +59,11 @@ export default {
     <img src="./assets/logo428x428.png" alt="logo" id="logo">
     <img 
     @click="funcMenuToggle"
-    src="./assets/logo256x256.png" alt="logo256" id="logo256">
-    <img src="./assets/logo0142857.png" alt="logo4" id="logo4">
+    src="./assets/logo256x256.png"
+    alt="logo256" id="logo256">
+    <img 
+    style="z-index: -5 !important;"
+    src="./assets/logo0142857.png" alt="logo4" id="logo4">
     <h1
     @click="isActive = !isActive" :aria-pressed="isActive ? 'true' : 'false'"
     ><sup>
@@ -102,7 +105,7 @@ export default {
 
     </header>
 
-    <div class="hero">
+    <div class="hero" style="z-index: 7 !important;">
 
       <svg style="margin-bottom: 2vw;" 
       width="96" height="5" viewBox="0 0 48 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +117,7 @@ export default {
         Hello
       </h2>
 
-      <h2 id="I" style="font-size: 2rem; line-height: 0rem;  background: #fff; letter-spacing: -1vw; position: relative; z-index: 1;">I'm Vadym Chervoniak</h2>
+      <h2 id="I" style="font-size: 2rem; line-height: 0rem;  background: #fff; letter-spacing: -1vw; position: relative;">I'm Vadym Chervoniak</h2>
 
       <div class="fewWords">
       <p>
@@ -383,6 +386,22 @@ export default {
 </template>
 
 <style>
+span, h4, div, ol{
+  z-index: 3 !important;
+}
+
+
+
+
+h1 {
+  position: absolute;
+  z-index: 10 !important;
+}
+
+
+#root > div:not(header) {
+  z-index: 3;
+}
 
 .activeClass {
   margin: 0;
@@ -714,7 +733,7 @@ letter-spacing: -0.3vw;
 }
 
 .hero {
-  padding: 7vw 5vw ;
+  padding: 7vw 5vw;
 }
 
 img.photo {
@@ -753,7 +772,15 @@ img.photo {
 {
   background-color: #44c444;
   position: relative;
-  z-index: 1;
+  z-index: -1;
+}
+
+#root > div:not(div.fewWords) {
+  z-index: 10 !important;
+}
+
+#root div.fewWords {
+  z-index: -5 !important;
 }
 
 #C {
@@ -795,7 +822,7 @@ img.photo {
   position: absolute;
   background-color: #44c444;
   height: 1000px;
-  z-index: -1;
+  z-index: -7;
   width: 2.7vw;
   top: 0;
   left: 0;
@@ -811,7 +838,7 @@ header {
   top:0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 10 !important;
 }
 
 header #logo {
@@ -891,5 +918,9 @@ header h1 {
   position: relative;
   background-color: #fff;
   height: 100%;
+}
+
+img * :not(header img) {
+  z-index: 9 !important;
 }
 </style>
